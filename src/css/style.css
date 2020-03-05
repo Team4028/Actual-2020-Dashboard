@@ -315,7 +315,7 @@ Configure Settings for Specific HTML Objects
     top: 210px;
     left: 0px;
     width: 220px;
-    height: 230px;
+    height: 220px;
 }
 
 #vision-groupbox {
@@ -331,7 +331,7 @@ Configure Settings for Specific HTML Objects
     
     padding: 0;
     position: fixed;
-    top: 445px;
+    top: 410px;
     left: 0px;
     width:220px;
     height: 115px;
@@ -365,6 +365,15 @@ Configure Settings for Specific HTML Objects
     top: 375px;
     left: 225px;
     width: 261px;
+    height: 160px;
+}
+#singulator {
+
+    padding: 0;
+    position: fixed;
+    top: 475px;
+    left: 225px;
+    width: 250px;
     height: 160px;
 }
 
@@ -404,6 +413,26 @@ Configure Settings for Specific HTML Objects
     text-align: center;
     vertical-align: middle;
     line-height: 81px;
+}
+.shooter-info {
+    width: 95%;
+    height: 81px;
+    background-color: indigo;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 81px;
+    font-size: 30px;
+}
+.singulator-info {
+    width: 80%;
+    height: 81px;
+    background-color: indigo;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 81px;
+    font-size: 30px;
 }
 #climber-status {
     font-size: 130px;

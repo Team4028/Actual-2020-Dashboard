@@ -162,14 +162,7 @@
 			</tr>
 		</table>
 	</div>
-	<div class="box" id="climber-groupbox">
-		<legend>Climber:</legend>
-		<table>
-			<tr>
-				<td><div id = "climber-status">Climber is Running</div></td>
-			</tr>
-		</table>
-	</div>
+
 	
 	<div class="box" id="spinner-groupbox">
 		<table>
@@ -194,6 +187,39 @@
 		</table>
 	</div>
 			
+
+	
+	<div class="box" id="climber-groupbox">
+		<table>
+			<colgroup>
+				<col width="100px"/>
+				<col width="100px"/>
+	
+			</colgroup>
+			<tr>
+				<td align="center"><label class="std-label">RPM</label></td>
+				<td align="center"><label class="std-label">Target RPM</label></td>
+			</tr>
+			<tr>
+				<td align="center"><div class="shooter-info" id="TargetRPM">##</div></td>
+				<td align="center"><div class="shooter-info" id="ActualRPM">##</div></td>
+			</tr>
+		</table>
+	</div>
+	<div class="box" id="singulator">
+		<table>
+			<colgroup>
+				<col width="200px"/>
+	
+			</colgroup>
+			<tr>
+				<td align="center"><label class="std-label">Singulator</label></td>
+			</tr>
+			<tr>
+				<td align="center"><div class="shooter-info" id="Singulator"></div></td>
+			</tr>
+		</table>
+	</div>
     <div id="login">
 		<label>Connection <br/> Login:</label>
 		<button class="login-button" id="usbConnectBtn" disabled>==== USB Connect ==== <br/> [172.22.11.2]</button>

@@ -11,6 +11,9 @@ let ui = {
 
 	//climber
 	climberStatus: document.getElementById('climber-status'),
+
+	targetRPM: document.getElementById('TargetRPM'),
+	actualRPM: document.getElementById('ActualRPM'),
 	
 	// infeed arm diagram
 	robotDiagram: {
@@ -46,6 +49,8 @@ let ui = {
 	isAltShot : document.getElementById('Is Alt Shot'),
 
 	isReadyToShoot : document.getElementById('Is At Speed'),
+
+	isSingulatorRunning : document.getElementById('Singulator'),
 
 	shooterOffset : document.getElementById('shotOffset'),
 
@@ -150,6 +155,7 @@ NetworkTables.addKeyListener('/SmartDashboard/Angle 1', (key, value) => {
 NetworkTables.addKeyListener('/SmartDashboard/Vision:Angle2InDegrees', (key, value) => {	
 	ui.visionAngle2Indicator.textContent = value + "\u00B0";
 });
+
 
 NetworkTables.addKeyListener('/SmartDashboard/LL Distance', (key, value) => {	
 	if(value < 600 && value != 0) {
@@ -319,6 +325,27 @@ NetworkTables.addKeyListener('/SmartDashboard/Is Alternate Shot', (key, value) =
 		ui.isAltShot.textContent = "Normal";
 	}
 });
+NetworkTables.addKeyListener('/SmartDashboard/Is Singulator Running', (key, value) =>
+{
+	if(value)
+	{
+		ui.isSingulatorRunning.style = "background-color:green;";
+		ui.isSingulatorRunning.textContent = "Running";
+	}
+	else{
+		ui.isSingulatorRunning.style = "background-color: rgb(173, 9, 9)";
+		ui.isSingulatorRunning.textContent = "Not Running";
+	}
+});
+NetworkTables.addKeyListener('/SmartDashboard/RPM', (key, value) =>
+{
+	ui.actualRPM.textContent = value;
+});
+NetworkTables.addKeyListener('/SmartDashboard/Target RPM', (key, value) =>
+{
+	ui.targetRPM.textContent = value;
+});
+
 
 
 
