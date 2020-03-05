@@ -310,12 +310,12 @@ Configure Settings for Specific HTML Objects
 }
 
 #powercell-groupbox {
-    padding: 0;
+    padding: 5px;
     position: fixed;
     top: 210px;
     left: 0px;
     width: 220px;
-    height: 220px;
+    height: 160px;
 }
 
 #vision-groupbox {
@@ -331,10 +331,10 @@ Configure Settings for Specific HTML Objects
     
     padding: 0;
     position: fixed;
-    top: 410px;
+    top: 375px;
     left: 0px;
-    width:220px;
-    height: 115px;
+    width: 220px;
+    height: 160px;
 }
 
 
@@ -400,7 +400,7 @@ Configure Settings for Specific HTML Objects
 }
 
 .powercell-count {
-	font-size: 160px;
+	font-size: 100px;
 	text-align: center;
 	color: yellow;
 }
