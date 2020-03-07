@@ -60,6 +60,7 @@ body > * {
     overflow: scroll;
     background: #21323A;
 }
+
 #timer {
     font-family: monospace;
     display: block;
@@ -171,7 +172,7 @@ Configure Settings for Specific HTML Objects
 }
 
 #robotCodeBuild {
-    width: 200px;	
+    width: 200px;   
     overflow: auto;
     height: 30px;
 }
@@ -235,14 +236,14 @@ Configure Settings for Specific HTML Objects
     padding: 0;
     position: fixed;
     top: 5px;
-    left: 495px;
-	width: 800px;
+    left: 565px;
+    width: 800px;
     height: 600px;
     overflow: hidden;
     background-color: #2B3A42; /*rgb(52, 47, 80);*/
     background-size: contain;
     border: solid 4px indigo;
-	/*background-image: url('http://10.40.28.15:1181/stream.mjpg');*/
+    /*background-image: url('http://10.40.28.15:1181/stream.mjpg');*/
     /* Replace the url with a live-updating image feed from your camera. */
     /*camera-address-USB: url('http://172.22.11.2:1180/stream.mjpg'); */
     /*radio: url('http://10.40.28.2:1180/stream.mjpg');*/
@@ -290,7 +291,7 @@ Configure Settings for Specific HTML Objects
     height: 130px;
 }
 
-#climber-groupbox {
+#shooter-rpm-info {
     
     padding: 0;
     position: fixed;
@@ -301,7 +302,7 @@ Configure Settings for Specific HTML Objects
 }
 
 
-#spinner-groupbox {
+#shooter-secondary-groupbox {
     padding: 0;
     position: fixed;
     top: 210px;
@@ -328,16 +329,16 @@ Configure Settings for Specific HTML Objects
     top: 375px;
     left: 225px;
     width: 261px;
-    height: 160px;
+    height: 110px;
 }
 #singulator {
 
     padding: 0;
     position: fixed;
-    top: 475px;
+    top: 490px;
     left: 225px;
-    width: 250px;
-    height: 160px;
+    width: 261px;
+    height: 110px;
 }
 
 #developer-dashboard {
@@ -363,8 +364,8 @@ Configure Settings for Specific HTML Objects
 }
 
 .powercell-count {
-	font-size: 100px;
-	text-align: center;
+    font-size: 100px;
+    text-align: center;
 	color: yellow;
 }
 
@@ -409,7 +410,7 @@ Configure Settings for Specific HTML Objects
     top: 370px;
     left: 0px;
     width: 300px;
-    height: 240px;	
+    height: 240px;  
 }
 
 #robot-diagram {
@@ -506,3 +507,4 @@ Configure Settings for Classes of HTML Objects
     cursor: pointer;
     outline: 0;
 }
+
