@@ -331,13 +331,22 @@ Configure Settings for Specific HTML Objects
     width: 261px;
     height: 110px;
 }
-#singulator {
+#intake {
 
     padding: 0;
     position: fixed;
     top: 490px;
     left: 225px;
     width: 261px;
+    height: 110px;
+}
+#actuator {
+
+    padding: 0;
+    position: fixed;
+    top: 490px;
+    left: 0px;
+    width: 220px;
     height: 110px;
 }
 
@@ -508,3 +517,12 @@ Configure Settings for Classes of HTML Objects
     outline: 0;
 }
 
+.act-Label {
+    color: cornsilk;
+    background: transparent;
+      border: none;
+    font-size: 14px;
+    padding: 4px 4px;
+    cursor: pointer;
+    outline: 0;
+}

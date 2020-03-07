@@ -52,6 +52,8 @@ let ui = {
 
 	isSingulatorRunning : document.getElementById('Singulator'),
 
+	isInfeedRunning : document.getElementById('Infeed'),
+
 	shooterOffset : document.getElementById('shotOffset'),
 
 	shooterDist : document.getElementById('shotDistance'),
@@ -335,6 +337,18 @@ NetworkTables.addKeyListener('/SmartDashboard/Is Singulator Running', (key, valu
 	else{
 		ui.isSingulatorRunning.style = "background-color: rgb(173, 9, 9)";
 		ui.isSingulatorRunning.textContent = "Not Running";
+	}
+});
+NetworkTables.addKeyListener('/SmartDashboard/Is Infeed Running', (key, value) =>
+{
+	if(value)
+	{
+		ui.isInfeedRunning.style = "background-color:green;";
+		ui.isInfeedRunning.textContent = "Running";
+	}
+	else{
+		ui.isInfeedRunning.style = "background-color: rgb(173, 9, 9)";
+		ui.isInfeedRunning.textContent = "Not Running";
 	}
 });
 NetworkTables.addKeyListener('/SmartDashboard/RPM', (key, value) =>
