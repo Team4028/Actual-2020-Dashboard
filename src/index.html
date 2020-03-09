@@ -72,12 +72,7 @@
 		</fieldset>
 	</div>
 	
-	<div class="box" id="powercell-groupbox">
-		<legend>Powercell Count:</legend>
-		<table>
-			<div id="powerCellCount" class="powercell-count">#</div>
-		</table>
-	</div>		
+	
 	
 	<!--<div id="robot-diagram-div">-->
 		<!-- Robot diagram, arms moves when encoder values change -->
@@ -161,9 +156,9 @@
 				<td align="center"><label class="std-label">Shooter Sensor Distance</label>
 			</tr>
 			<tr>
-				<td align="center"><div class="shooter-indicator" id="shotDistance">##in</div></td>
-				<td align="center"><div class="shooter-indicator" id="shotOffset">##in</div></td>
-				<td align="center"><div class="shooter-indicator" id="sensorDist">##in</div></td>
+				<td align="center"><div class="shooter-numbers-but-good" id="shotDistance">##in</div></td>
+				<td align="center"><div class="shooter-numbers-but-good" id="shotOffset">##in</div></td>
+				<td align="center"><div class="shooter-numbers-but-good" id="sensorDist">##in</div></td>
 			</tr>
 		</table>
 	</div>
@@ -207,6 +202,46 @@
 			</tr>
 		</table>
 	</div>
+	<div class="box" id="photo-eyes">
+		<table>
+			<colgroup>
+				<col width="130px"/>
+				<col width="130px"/>
+	
+			</colgroup>
+			<tr>
+				<td align="center"><label class="std-label">Post Singulator</label></td>
+				<td align="center"><label class="std-label">Pre Coveyor</label></td>
+
+			</tr>
+			<tr>
+				<td align="center"><div class="photo-eye-info" id="Pre-Covey"></div></td>
+				<td align="center"><div class="photo-eye-info" id="Post-Singulator"></div></td>
+
+			</tr>
+		</table>
+	</div>
+
+	<div class="box" id="photo-eyes2">
+		<table>
+			<colgroup>
+				<col width="130px"/>
+				<col width="130px"/>
+	
+			</colgroup>
+			<tr>
+				<td align="center"><label class="std-label">Post Conveyor</label></td>
+				<td align="center"><label class="std-label">Mid Conveyor</label></td>
+
+			</tr>
+			<tr>
+				<td align="center"><div class="photo-eye-info" id="Post-Convey"></div></td>
+				<td align="center"><div class="photo-eye-info" id="Mid-Convey"></div></td>
+
+			</tr>
+		</table>
+	</div>
+
 
 	<div class="box" id="actuator">
 		<table>

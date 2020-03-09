@@ -14,7 +14,7 @@ body {
     user-select: none;
     color:cornsilk;
     overflow: hidden;
-    background:#21323A; /*rgb(47, 43, 66);*/
+    background:#00212B; /*rgb(47, 43, 66);*/
 }
 
 button, input[type="text"], input[type="number"], .select-container, select {
@@ -58,7 +58,7 @@ body > * {
     padding: 10px;
     position: fixed;
     overflow: scroll;
-    background: #21323A;
+    background:#00212B;
 }
 
 #timer {
@@ -156,7 +156,7 @@ Configure Settings for Specific HTML Objects
 
 #visionTargetIndicator {
     border-radius: 4px;
-    background-color: rgb(173, 9, 9);
+    background-color: #526D72 ;
     height: grow;
     width: grow;
 }
@@ -164,7 +164,7 @@ Configure Settings for Specific HTML Objects
 .vision-indicator {
     width: 95%;
     height: 81px;
-    background-color: rgb(173, 9, 9);
+    background-color: #526D72 ;
     border-radius: 4px;
     text-align: center;
     vertical-align: middle;
@@ -240,9 +240,9 @@ Configure Settings for Specific HTML Objects
     width: 800px;
     height: 600px;
     overflow: hidden;
-    background-color: #2B3A42; /*rgb(52, 47, 80);*/
+    background-color: #002B36; /*rgb(52, 47, 80);*/
     background-size: contain;
-    border: solid 4px indigo;
+    border: solid 4px #00212B
     /*background-image: url('http://10.40.28.15:1181/stream.mjpg');*/
     /* Replace the url with a live-updating image feed from your camera. */
     /*camera-address-USB: url('http://172.22.11.2:1180/stream.mjpg'); */
@@ -251,7 +251,7 @@ Configure Settings for Specific HTML Objects
 
 /* Groupboxes */
 .box{
-    background-color: #2B3A42; /*rgb(52, 47, 80);*/
+    background-color: #002B36; /*rgb(52, 47, 80);*/
     margin: 5px;
     border-radius: 0px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -273,13 +273,36 @@ Configure Settings for Specific HTML Objects
     text-align: center;
 }
 
-#powercell-groupbox {
-    padding: 5px;
-    position: fixed;
+
+
+#photo-eyes{
+    padding: 0%;
+    position:fixed;
     top: 210px;
-    left: 0px;
-    width: 220px;
-    height: 160px;
+    left:0px;
+    width:220px;
+    height: 80px;
+}
+#photo-eyes2{
+    padding: 0%;
+    position:fixed;
+    top:290px;
+    left:0px;
+    width:220px;
+    height: 80px;
+}
+
+.photo-eye-info{
+
+    width: 95%;
+    height: 55px;
+    background-color: #004052;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 30px;
+    
 }
 
 #vision-groupbox {
@@ -372,16 +395,11 @@ Configure Settings for Specific HTML Objects
     left: 1px;
 }
 
-.powercell-count {
-    font-size: 100px;
-    text-align: center;
-	color: yellow;
-}
 
 .shooter-indicator {
     width: 95%;
     height: 81px;
-    background-color: indigo;
+    background-color: #004052;
     border-radius: 4px;
     text-align: center;
     vertical-align: middle;
@@ -391,17 +409,27 @@ Configure Settings for Specific HTML Objects
 .shooter-info {
     width: 95%;
     height: 81px;
-    background-color: indigo;
+    background-color: #004052;
     border-radius: 4px;
     text-align: center;
     vertical-align: middle;
     line-height: 81px;
     font-size: 30px;
 }
+.shooter-numbers-but-good {
+    width: 95%;
+    height: 81px;
+    background-color: #004052;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 81px;
+    font-size: 20px;
+}
 .singulator-info {
     width: 80%;
     height: 81px;
-    background-color: indigo;
+    background-color: #004052;
     border-radius: 4px;
     text-align: center;
     vertical-align: middle;

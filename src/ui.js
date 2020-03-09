@@ -35,16 +35,9 @@ let ui = {
 
 	// camera
 	camera: document.getElementById('camera'),
-	
-	// spinner **To Be Editted**
-	spinnerColor: document.getElementById('spinnerColor'),
-	spinnerRotations: document.getElementById('spinnerRotations'),
-	
+
 	// powercell count **To be Editted**
 	powerCellCount: document.getElementById('powerCellCount'),
-	
-	// infeed position **To Be Editted**F
-	infeedPosition: document.getElementById('infeedPosition'),
 
 	isAltShot : document.getElementById('Is Alt Shot'),
 
@@ -195,56 +188,8 @@ NetworkTables.addKeyListener('/SmartDashboard/ClimberIsRunning', (key, value) =>
 	}
 });
 
-// ========================================================================================
-// Elevator
-// ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Elevator: Position', (key, value) => {
-	if (value == "LEVEL_1"){
-		ui.elevatorPosition.style.fill = "green";
-		ui.elevatorPosition.textContent = "1";
-	}
-	else if (value == "LEVEL_2"){
-		ui.elevatorPosition.style.fill = "yellow";
-		ui.elevatorPosition.textContent = "2";
-	}
-	else if (value == "LEVEL_3"){
-		ui.elevatorPosition.style.fill = "red";
-		ui.elevatorPosition.textContent = "3";
-	} else {
-		ui.elevatorPosition.style.fill = "cornsilk";
-		ui.elevatorPosition.textContent = "F";
-	}
-});
 
-// ========================================================================================
-// Bucket Group Box
-// ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Cargo:HasHatch', (key, value) => {	
-	if (value) {
-		ui.gamepiece.style.fill = "yellow";
-		ui.gamepiece.style.stroke = "darkgrey";
-		ui.hatchcenter.style.visibility = "visible";
-	} else {
-		ui.gamepiece.style.fill = "darkorange";
-		ui.gamepiece.style.stroke = "orange";
-		ui.hatchcenter.style.visibility = "hidden";
-	}
-});
 
-// ========================================================================================
-// SPINNER
-// ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Spinner:Rotations', (key, value) => {
-	if (value >= 3 && value <= 5) {
-		ui.spinnerRotations.style = "background-color:green;";
-	} else {
-		ui.spinnerRotations.style = "background-color:red;";
-	}
-});
-
-NetworkTables.addKeyListener('/SmartDashboard/Spinner:Color', (key, value) => {
-	
-});
 
 // ========================================================================================
 // POWERCELL COUNT 
@@ -270,21 +215,6 @@ NetworkTables.addKeyListener('/SmartDashboard/Cell Count', (key, value) => {
 //		powerCellCount= 1;
 //	}
 
-// ========================================================================================
-// INFEED
-// ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Singulator:Sensor', (key, value) => {
-	 if (value == "IN"){
-		ui.elevatorPosition.style.fill = "green";
-		ui.elevatorPosition.textContent = "In";
-	} else if (value == "OUT"){
-		ui.elevatorPosition.style.fill = "yellow";
-		ui.elevatorPosition.textContent = "Out";
-	} else {
-		ui.elevatorPosition.style.fill = "cornsilk";
-		ui.elevatorPosition.textContent = "F";
-	}
-});
 
 // ========================================================================================
 // Shooter
