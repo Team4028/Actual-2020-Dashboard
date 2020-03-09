@@ -13,6 +13,7 @@ let ui = {
 	climberStatus: document.getElementById('climber-status'),
 
 	targetRPM: document.getElementById('TargetRPM'),
+	
 	actualRPM: document.getElementById('ActualRPM'),
 	
 	// infeed arm diagram
@@ -27,7 +28,6 @@ let ui = {
 	visionDistanceIndicator: document.getElementById('visionDistanceIndicator'),
 		
 	// elevator
-	elevatorPosition: document.getElementById('elevatorPosition'),
 
 	// bucket
 	gamepiece: document.getElementById('gamepiece'),
@@ -51,7 +51,9 @@ let ui = {
 
 	shooterDist : document.getElementById('shotDistance'),
 
-	shooterSensorDistance : document.getElementById('sensorDist')
+	shooterSensorDistance : document.getElementById('sensorDist'),
+
+	actval: document.getElementById('Actuator')
 
 };
 
@@ -244,6 +246,10 @@ NetworkTables.addKeyListener('/SmartDashboard/Shooter Offset', (key, value) =>
 NetworkTables.addKeyListener('/SmartDashboard/Shooter Sensor Distance', (key, value) =>
 {
 	ui.shooterSensorDistance.textContent = value;
+});
+NetworkTables.addKeyListener('/SmartDashboard/Actuator Value', (key, value) =>
+{
+	ui.actval.textContent = value;
 });
 NetworkTables.addKeyListener('/SmartDashboard/Is Alternate Shot', (key, value) =>
 {
