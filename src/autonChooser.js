@@ -31,7 +31,6 @@ function addButton(label) {
         // grab the value (selected auton) of the button
         selectedAuton.value = targ.value;
         NetworkTables.putValue('/SmartDashboard/Auton/selected', selectedAuton.value);
-        console.log(fuck);
     
         //Change Selected Button appearance and reset all others
         var autonButtonList = autonChooserBtnContainer.getElementsByClassName("auton-button");

@@ -13,13 +13,9 @@ let ui = {
 	climberStatus: document.getElementById('climber-status'),
 
 	targetRPM: document.getElementById('TargetRPM'),
-	
+
 	actualRPM: document.getElementById('ActualRPM'),
 	
-	// infeed arm diagram
-	robotDiagram: {
-		robot: document.getElementById('robot'),
-	},
 
 	//vision
 	visionTargetIndicator: document.getElementById('visionTargetIndicator'),
@@ -27,16 +23,10 @@ let ui = {
 	visionConnectionIndicator: document.getElementById('visionConnectionIndicator'),
 	visionDistanceIndicator: document.getElementById('visionDistanceIndicator'),
 		
-	// elevator
-
-	// bucket
-	gamepiece: document.getElementById('gamepiece'),
-	hatchcenter: document.getElementById('hatch-center'),
 
 	// camera
 	camera: document.getElementById('camera'),
 
-	// powercell count **To be Editted**
 	powerCellCount: document.getElementById('powerCellCount'),
 
 	isAltShot : document.getElementById('Is Alt Shot'),
@@ -53,7 +43,19 @@ let ui = {
 
 	shooterSensorDistance : document.getElementById('sensorDist'),
 
-	actval: document.getElementById('Actuator')
+	actval: document.getElementById('Actuator'),
+
+
+
+	// Photo Eyes 
+	midconvey: document.getElementById('Mid-Convey'),
+
+	preconvey: document.getElementById('Pre-Covey'),
+
+	postsingulator: document.getElementById('Post-Singulator'),
+	
+	postconvey: document.getElementById('Post-Convey')
+
 
 };
 
@@ -175,49 +177,12 @@ NetworkTables.addKeyListener('/SmartDashboard/Vision:IsPingable', (key, value) =
 		ui.visionConnectionIndicator.style = "background-color:red;";
 	}
 });
-// ========================================================================================
-// Chassis
-// ========================================================================================
-
-// ========================================================================================
-// Climber
-// ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/ClimberIsRunning', (key, value) => {	
-	if(value){
-		ui.climberStatus.style.visibility = visible;
-	} else {
-		ui.climberStatus.style.visibility = hidden;
-	}
-});
-
-
-
 
 // ========================================================================================
 // POWERCELL COUNT 
 // ========================================================================================
-NetworkTables.addKeyListener('/SmartDashboard/Cell Count', (key, value) => {
-	//ui.powerCellCount.textContent = value;
- if( value <= 3)
- {
-	 ui.powerCellCount.textContent = value;
- }
- else{
-	 ui.powerCellCount.textContent = "4+";
- }
-	});
-	
-		//	let pc = valueOf(powerCellCount);
-	
-//	for (let pc = 0; pc < PowerCellDetected; pc++)
-//	for (let pc = 0; pc++) {
-//        powerCellCount(value[pc]);  
-//    }
-//	if (powerCellCount = 6) {
-//		powerCellCount= 1;
-//	}
 
-
+	
 // ========================================================================================
 // Shooter
 // ========================================================================================
@@ -249,11 +214,11 @@ NetworkTables.addKeyListener('/SmartDashboard/Shooter Sensor Distance', (key, va
 });
 NetworkTables.addKeyListener('/SmartDashboard/Actuator Value', (key, value) =>
 {
-	ui.actval.textContent = value;
+	ui.actval.textContent = Math.round(value * 100) / 100;
 });
-NetworkTables.addKeyListener('/SmartDashboard/Is Alternate Shot', (key, value) =>
+NetworkTables.addKeyListener('/SmartDashboard/Is Normal Shot', (key, value) =>
 {
-	if( value == true)
+	if(!value)
 	{
 		ui.isAltShot.style = "background-color:red;";
 		ui.isAltShot.textContent = "Alternate";
@@ -272,7 +237,7 @@ NetworkTables.addKeyListener('/SmartDashboard/Is Singulator Running', (key, valu
 	}
 	else{
 		ui.isSingulatorRunning.style = "background-color: rgb(173, 9, 9)";
-		ui.isSingulatorRunning.textContent = "Not Running";
+		ui.isSingulatorRunning.textContent = "No";
 	}
 });
 NetworkTables.addKeyListener('/SmartDashboard/Is Infeed Running', (key, value) =>
@@ -284,19 +249,63 @@ NetworkTables.addKeyListener('/SmartDashboard/Is Infeed Running', (key, value) =
 	}
 	else{
 		ui.isInfeedRunning.style = "background-color: rgb(173, 9, 9)";
-		ui.isInfeedRunning.textContent = "Not Running";
+		ui.isInfeedRunning.textContent = "No";
 	}
 });
+
+NetworkTables.addKeyListener('/SmartDashboard/POST-SINGULATOR', (key, value) =>
+{
+	if(!value)
+	{
+		ui.postsingulator.style = "background-color:green;";
+	}
+	else{
+		ui.postsingulator.style = "background-color: rgb(173, 9, 9)";
+	}
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/PRE-SHOOTER SENSOR', (key, value) =>
+{
+	if(!value)
+	{
+		ui.postconvey.style = "background-color:green;";
+	}
+	else{
+		ui.postconvey.style = "background-color: rgb(173, 9, 9)";
+	}
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/PRE-CONVEYOR SENSOR', (key, value) =>
+{
+	if(!value)
+	{
+		ui.preconvey.style = "background-color:green;";
+	}
+	else{
+		ui.preconvey.style = "background-color: rgb(173, 9, 9)";
+	}
+});
+
+NetworkTables.addKeyListener('/SmartDashboard/MID-CONVEYOR', (key, value) =>
+{
+	if(!value)
+	{
+		ui.midconvey.style = "background-color:green;";
+	}
+	else{
+		ui.midconvey.style = "background-color: rgb(173, 9, 9)";
+	}
+});
+
+
 NetworkTables.addKeyListener('/SmartDashboard/RPM', (key, value) =>
 {
-	ui.actualRPM.textContent = value;
+	ui.actualRPM.textContent = value * 10;
 });
 NetworkTables.addKeyListener('/SmartDashboard/Target RPM', (key, value) =>
 {
-	ui.targetRPM.textContent = value;
+	ui.targetRPM.textContent = value * 10;
 });
-
-
 
 
 // ========================================================================================
