@@ -54,7 +54,9 @@ let ui = {
 
 	postsingulator: document.getElementById('Post-Singulator'),
 	
-	postconvey: document.getElementById('Post-Convey')
+	postconvey: document.getElementById('Post-Convey'),
+
+	powerCellCount : document.getElementById('powerCellCount')
 
 
 };
@@ -158,7 +160,7 @@ NetworkTables.addKeyListener('/SmartDashboard/Vision:Angle2InDegrees', (key, val
 
 NetworkTables.addKeyListener('/SmartDashboard/LL Distance', (key, value) => {	
 	if(value < 600 && value != 0) {
-		ui.visionDistanceIndicator.textContent = Math.round(value) + "in";
+		ui.visionDistanceIndicator.textContent = Math.round((value/12)*10)/10 + "ft";
 		if (value <= 600) {
 			ui.visionDistanceIndicator.style = "background-color:green;";
 		} 
@@ -203,6 +205,10 @@ NetworkTables.addKeyListener('/SmartDashboard/Is At Speed', (key, value) =>
 NetworkTables.addKeyListener('/SmartDashboard/Shot Distance', (key, value) =>
 {
 	ui.shooterDist.textContent = value;
+});
+NetworkTables.addKeyListener('/SmartDashboard/Cell Count', (key, value) =>
+{
+	ui.powerCellCount.textContent = value;
 });
 NetworkTables.addKeyListener('/SmartDashboard/Shooter Offset', (key, value) =>
 {
